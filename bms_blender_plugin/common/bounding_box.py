@@ -40,14 +40,14 @@ class BoundingBox:
     def bbox_to_txtpb_format(self):
         """Returns a string representation of the bounding box in the correct format for <AC>.txtpb files."""
         return (f'bounding_box {{\n'
-                f'      min {{\n'
-                f'        x: {round(self.min_bms_vertex.x, 1)}\n'
-                f'        y: {round(self.min_bms_vertex.y, 1)}\n'
-                f'        z: {round(self.min_bms_vertex.z, 1)}\n'
-                f'      }}\n'
-                f'      max {{\n'
-                f'        x: {round(self.max_bms_vertex.x, 1)}\n'
-                f'        y: {round(self.max_bms_vertex.y, 1)}\n'
-                f'        z: {round(self.max_bms_vertex.z, 1)}\n'
-                f'      }}\n'
-                f'    }}\n')
+                f'  min {{\n'
+                f'      x: {round(self.min_bms_vertex.x, 1)}\n'
+                f'      y: {round(self.min_bms_vertex.y, 1)}\n'
+                f'      z: {round(self.min_bms_vertex.z, 1)}\n'
+                f'  }}\n'
+                f'  max {{\n'
+                f'      x: {round(self.max_bms_vertex.x, 1)}\n'
+                f'      y: {round(self.max_bms_vertex.y, 1)}\n'
+                f'      z: {round(self.max_bms_vertex.z, 1)}\n'
+                f'  }}\n'
+                f'}}\n')
