@@ -41,13 +41,13 @@ class BoundingBox:
         """Returns a string representation of the bounding box in the correct format for <AC>.txtpb files."""
         return (f'bounding_box {{\n'
                 f'      min {{\n'
-                f'        x: {self.min_bms_vertex.x}\n'
-                f'        y: {self.min_bms_vertex.y}\n'
-                f'        z: {self.min_bms_vertex.z}\n'
+                f'        x: {round(self.min_bms_vertex.x, 1)}\n'
+                f'        y: {round(self.min_bms_vertex.y, 1)}\n'
+                f'        z: {round(self.min_bms_vertex.z, 1)}\n'
                 f'      }}\n'
                 f'      max {{\n'
-                f'        x: {self.max_bms_vertex.x}\n'
-                f'        y: {self.max_bms_vertex.y}\n'
-                f'        z: {self.max_bms_vertex.z}\n'
+                f'        x: {round(self.max_bms_vertex.x, 1)}\n'
+                f'        y: {round(self.max_bms_vertex.y, 1)}\n'
+                f'        z: {round(self.max_bms_vertex.z, 1)}\n'
                 f'      }}\n'
-                f'    }}')
+                f'    }}\n')
