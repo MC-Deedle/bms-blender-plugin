@@ -17,6 +17,7 @@ from bms_blender_plugin.exporter.export_materials import (
     export_materials,
 )
 from bms_blender_plugin.exporter.export_parent_dat import get_slots, export_parent_dat
+from bms_blender_plugin.exporter.export_bounding_boxes import export_bounding_boxes
 
 
 def export_bml(context, lods, file_directory, file_prefix, export_settings: ExportSettings):
@@ -106,6 +107,11 @@ def export_bml(context, lods, file_directory, file_prefix, export_settings: Expo
     if export_settings.export_hotspots:
         export_hotspots(all_hotspots, file_directory)
 
+    # If there is more than one bounding box defined, output all to a file.
+    if len(BBox_Array) > 1:
+        export_bounding_boxes(BBox_Array, file_directory)
+
+
     elapsed = datetime.datetime.now() - start_time
     elapsed_minutes = divmod(elapsed.total_seconds(), 60)
 
@@ -113,6 +119,7 @@ def export_bml(context, lods, file_directory, file_prefix, export_settings: Expo
         f"BML export finished in "
         f"{math.trunc(elapsed_minutes[0])}m {round(elapsed_minutes[1],2)}s"
     )
+
 
     print(success_message)
     return success_message, all_exported_bmls
